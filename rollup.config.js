@@ -2,6 +2,8 @@ import babel from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve"
 import typescript from "@rollup/plugin-typescript";
+import { terser } from "rollup-plugin-terser"
+import externals from "rollup-plugin-node-externals"
 
 export default {
   input: "src/index.ts",
@@ -14,7 +16,11 @@ export default {
   plugins: [
     resolve(), // 查找和打包node_modules中的第三方模块
     commonjs(), // 将 CommonJS 转换成 ES2015 模块供 Rollup 处理
+    externals({
+      devDeps: false, // devDependencies 类型的依赖就不用加到 externals 了。
+    }),
     typescript(), // 解析TypeScript
     babel({ babelHelpers: "bundled" }), // babel配置,编译es6
+    terser()
   ]
 }

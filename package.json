@@ -5,9 +5,11 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "build": "rm -rf dist/* && rollup -c",
     "dev": "rollup -c -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist/* && rollup -c",
+    "test": "node test/test.js",
+    "pretest": "npm run build",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -33,7 +35,22 @@
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^11.0.0",
     "rollup": "^2.70.2",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-externals": "^5.1.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^4.0.4",
     "tslib": "^2.3.1",
     "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@tp/h5component": "^1.0.8",
+    "@tp/h5jumpapp": "^1.1.1",
+    "@tp/jsonp": "^1.2.1",
+    "@tp/share": "^1.6.6",
+    "@tp/ua": "^1.3.2",
+    "axios": "^0.21.0",
+    "axios-jsonp": "^1.0.4",
+    "core-js": "^3.15.2"
   }
 }
