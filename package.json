@@ -1,0 +1,39 @@
+{
+  "name": "rollup-ts",
+  "version": "1.0.0",
+  "description": "utils by ts and rollup2",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist/* && rollup -c",
+    "dev": "rollup -c -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fun005/rollup-ts.git"
+  },
+  "keywords": [
+    "utils",
+    "toolkit",
+    "rollup",
+    "typescript"
+  ],
+  "author": "tangc1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fun005/rollup-ts/issues"
+  },
+  "homepage": "https://github.com/Fun005/rollup-ts#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "rollup": "^2.70.2",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.3"
+  }
+}
